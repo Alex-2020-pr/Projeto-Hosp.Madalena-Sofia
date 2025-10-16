@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - Sistema SGH Spdata</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #28a745;
+            --accent: #ffc107;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary), #003d82);
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 20px 0 10px;
+        }
+        
+        .client-info {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .highlight-box {
+            background-color: #e8f4fd;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .savings-table {
+            border: 2px solid var(--secondary);
+        }
+        
+        .savings-table th {
+            background-color: var(--secondary);
+        }
+        
+        .total-row {
+            font-weight: bold;
+            background-color: #e8f5e9 !important;
+        }
+        
+        .payment-option {
+            background-color: #fff9e6;
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+        
+        .indication-info {
+            background-color: #fff3cd;
+            border: 1px solid var(--accent);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .benefit-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PROPOSTA COMERCIAL</h1>
+            <p>Sistema de Gestão Hospitalar (SGH) – Spdata</p>
+        </header>
+        
+        <div class="client-info">
+            <h2>Cliente: Hospital Madalena Sofia – Curitiba</h2>
+        </div>
+        
+        <section>
+            <h2>Condições Exclusivas</h2>
+            <p>A Spdata oferece condições especiais para o <strong>Hospital Madalena Sofia</strong>, garantindo <strong>previsibilidade financeira</strong> e <strong>redução de custos</strong> durante a implantação e operação do sistema.</p>
+            
+            <div class="highlight-box">
+                <h3>Investimento e Condições de Pagamento</h3>
+                
+                <table>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Condição</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Taxa de Implantação</strong></td>
+                        <td>R$ 141.725,00</td>
+                        <td><span class="discount-badge">48x sem juros</span> (R$ 2.952,60/mês)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mensalidade – Fase 1 (1º ano)</strong></td>
+                        <td>R$ 6.342,00/mês</td>
+                        <td><span class="discount-badge">50% de desconto</span> → R$ 3.171,00/mês</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mensalidade – Operação Plena (13º mês em diante)</strong></td>
+                        <td>R$ 8.982,00/mês</td>
+                        <td>Valor integral</td>
+                    </tr>
+                </table>
+                
+                <div class="payment-option">
+                    <h3>💳 Opção de Pagamento à Vista</h3>
+                    <p><strong>7% de desconto na taxa de implantação</strong></p>
+                    <p>De <s>R$ 141.725,00</s> por <strong>R$ 131.804,25</strong></p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>✅ Carência de Mensalidade</h2>
+            <p><strong>3 primeiros meses:</strong> cobrança apenas da taxa de implantação</p>
+            <p><strong>Mensalidade com carência total</strong> nos 3 primeiros meses</p>
+        </section>
+        
+        <section>
+            <h2>🏆 Benefícios Exclusivos</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💳</div>
+                    <h3>Parcelamento em 48x sem juros</h3>
+                    <p>Facilidade no pagamento da implantação.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Sem reajuste IGPM</h3>
+                    <p>Economia garantida comparada a cenários com correção de 5% ao ano.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>50% de desconto na Fase 1</h3>
+                    <p>Redução de custos no primeiro ano de operação.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Carência de 3 meses</h3>
+                    <p>Alívio financeiro no início do projeto.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Desconto por Indicação</h3>
+                    <p>10% de desconto por 12 meses a cada indicação.</p>
+                </div>
+            </div>
+            
+            <div class="indication-info">
+                <h3>Informações sobre o Desconto por Indicação</h3>
+                <p><strong>10% de desconto por 12 meses</strong> a cada indicação que fechar contrato.</p>
+                <p><strong>Acumulativo até 30%</strong> (válido apenas sobre a mensalidade, não incide sobre taxa de implantação).</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>📊 Resumo das Economias</h2>
+            
+            <table class="savings-table">
+                <tr>
+                    <th>Benefício</th>
+                    <th>Valor Economizado</th>
+                </tr>
+                <tr>
+                    <td>Ausência de reajuste IGPM (5% a.a.)</td>
+                    <td>R$ 30.236,00</td>
+                </tr>
+                <tr>
+                    <td>Desconto de 50% na Fase 1 (12 meses)</td>
+                    <td>R$ 38.052,00</td>
+                </tr>
+                <tr>
+                    <td>Carência de 3 meses da mensalidade</td>
+                    <td>R$ 9.513,00</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total de Economia</strong></td>
+                    <td><strong>R$ 77.801,00</strong></td>
+                </tr>
+            </table>
+        </section>
+        
+        <section>
+            <h2>📅 Projeção de Pagamentos Mensais</h2>
+            
+            <table>
+                <tr>
+                    <th>Período</th>
+                    <th>Taxa de Implantação</th>
+                    <th>Mensalidade</th>
+                    <th>Total Mensal</th>
+                </tr>
+                <tr>
+                    <td>Meses 1 a 3</td>
+                    <td>R$ 2.952,60</td>
+                    <td>R$ 0,00</td>
+                    <td>R$ 2.952,60</td>
+                </tr>
+                <tr>
+                    <td>Meses 4 a 12</td>
+                    <td>R$ 2.952,60</td>
+                    <td>R$ 3.171,00</td>
+                    <td>R$ 6.123,60</td>
+                </tr>
+                <tr>
+                    <td>Meses 13 a 48</td>
+                    <td>R$ 2.952,60</td>
+                    <td>R$ 8.982,00</td>
+                    <td>R$ 11.934,60</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section>
+            <h2>🧾 Resumo Financeiro do Contrato (48 meses)</h2>
+            
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Valor Total</th>
+                </tr>
+                <tr>
+                    <td>Taxa de Implantação</td>
+                    <td>R$ 141.725,00</td>
+                </tr>
+                <tr>
+                    <td>Mensalidade Fase 1 (12 meses)</td>
+                    <td>R$ 38.052,00</td>
+                </tr>
+                <tr>
+                    <td>Mensalidade Operação Plena (36 meses)</td>
+                    <td>R$ 323.352,00</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total Geral</strong></td>
+                    <td><strong>R$ 503.129,00</strong></td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="highlight-box">
+            <h2>💡 Destaques Finais</h2>
+            <ul>
+                <li><strong>Economia total direta:</strong> <span class="discount-badge">R$ 77.801,00</span></li>
+                <li><strong>Possibilidade de desconto adicional</strong> com indicação (até 30% na mensalidade)</li>
+                <li><strong>Condição especial de pagamento à vista:</strong> 7% de desconto na taxa de implantação</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <div class="logo">Spdata</div>
+            <p>Tecnologia em Gestão Hospitalar</p>
+            <p>Excelência, inovação e compromisso com resultados.</p>
+        </footer>
+    </div>
+</body>
+</html>
