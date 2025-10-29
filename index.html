@@ -34,17 +34,12 @@
             max-width: 1000px;
             margin: 0 auto 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             padding: 15px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .layout-buttons {
-            display: flex;
-            gap: 10px;
         }
         
         .btn {
@@ -54,16 +49,6 @@
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s;
-        }
-        
-        .btn-layout {
-            background-color: #e9ecef;
-            color: var(--dark);
-        }
-        
-        .btn-layout.active {
-            background-color: var(--primary);
-            color: white;
         }
         
         .btn-pdf {
@@ -82,87 +67,6 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
-        }
-        
-        /* Layout 1 (Seu layout original) */
-        .layout1 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9fbfd;
-            color: #2c3e50;
-        }
-        
-        .layout1 .content {
-            padding: 30px;
-        }
-        
-        .layout1 h1 {
-            color: #1a5276;
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-        
-        .layout1 h2 {
-            color: #2874a6;
-            margin-top: 25px;
-            border-bottom: 2px solid #eaf2f8;
-            padding-bottom: 8px;
-        }
-        
-        .layout1 .highlight-box {
-            background-color: #e8f4fc;
-            padding: 16px;
-            border-left: 5px solid #3498db;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
-        
-        .layout1 table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        .layout1 th, .layout1 td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .layout1 th {
-            background-color: #d6eaf8;
-            color: #1a5276;
-        }
-        
-        .layout1 .total {
-            font-weight: bold;
-            color: #27ae60;
-            font-size: 18px;
-        }
-        
-        .layout1 .badge {
-            display: inline-block;
-            background: #2ecc71;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        .layout1 .note {
-            font-style: italic;
-            color: #7f8c8d;
-            font-size: 14px;
-        }
-        
-        .layout1 .footer {
-            margin-top: 30px;
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 13px;
-            padding: 20px;
-            background-color: #eaf2f8;
         }
         
         /* Layout 2 (Meu layout) */
@@ -312,15 +216,6 @@
             margin-bottom: 10px;
         }
         
-        /* Esconder layout não ativo */
-        .layout {
-            display: none;
-        }
-        
-        .layout.active {
-            display: block;
-        }
-        
         /* Estilos para impressão */
         @media print {
             .controls {
@@ -338,17 +233,17 @@
             }
             
             /* Garantir que as cores apareçam na impressão */
-            .layout1 th, .layout2 th {
+            .layout2 th {
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
             }
             
-            .layout1 .badge, .layout2 .badge, .layout2 .discount-badge {
+            .layout2 .discount-badge {
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
             }
             
-            .layout1 .highlight-box, .layout2 .highlight-box {
+            .layout2 .highlight-box {
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
             }
@@ -357,85 +252,12 @@
 </head>
 <body>
     <div class="controls">
-        <div class="layout-buttons">
-            <button id="layout1-btn" class="btn btn-layout active">Layout 1</button>
-            <button id="layout2-btn" class="btn btn-layout">Layout 2</button>
-        </div>
         <button id="pdf-btn" class="btn btn-pdf">Salvar como PDF</button>
     </div>
 
     <div class="container">
-        <!-- Layout 1 (Seu layout original) -->
-        <div id="layout1" class="layout active">
-            <div class="layout1">
-                <div class="content">
-                    <h1>Proposta Comercial – Sistema SGH Spdata</h1>
-                    <p style="text-align: center; color: #5d6d7e;"><strong>Cliente:</strong> Hospital Madalena Sofia – Curitiba</p>
-
-                    <div class="highlight-box">
-                        <p>✅ <strong>Condições exclusivas com foco em previsibilidade, redução de custos e apoio contínuo durante toda a parceria.</strong></p>
-                    </div>
-
-                    <h2>1. Condições Comerciais</h2>
-                    <ul>
-                        <li><strong>Taxa de implantação:</strong> R$ 141.725,00</li>
-                        <li><strong>Parcelamento:</strong> 48x sem juros → <strong>R$ 2.952,60/mês</strong></li>
-                        <li><strong>Opção à vista:</strong> <span class="badge">7% de desconto</span> → <strong>R$ 131.804,25</strong></li>
-                        <li><strong>Mensalidade – Fase 1 (meses 1 a 12):</strong> R$ 3.171,00/mês (50% de desconto sobre R$ 6.342,00)</li>
-                        <li><strong>Mensalidade – Fase 2 (a partir do 13º mês):</strong> R$ 8.982,00/mês</li>
-                        <li><strong>Carência:</strong> Sem cobrança de mensalidade nos primeiros 3 meses</li>
-                    </ul>
-
-                    <h2>2. Economias Diretas para o Hospital</h2>
-                    <table>
-                        <tr><th>Benefício</th><th>Valor Economizado</th></tr>
-                        <tr><td>Ausência de reajuste IGPM (5% a.a. sobre implantação)</td><td>R$ 30.236,00</td></tr>
-                        <tr><td>Desconto de 50% na Fase 1 (12 meses)</td><td>R$ 38.052,00</td></tr>
-                        <tr><td>Carência de 3 meses de mensalidade</td><td>R$ 9.513,00</td></tr>
-                        <tr class="total"><td><strong>Total de economia demonstrada</strong></td><td><strong>R$ 77.801,00</strong></td></tr>
-                    </table>
-
-                    <h2>3. Benefício por Indicação (Case Spdata)</h2>
-                    <p>A partir do 13º mês, o Hospital Madalena Sofia pode ativar um <strong>desconto adicional de 10% sobre a mensalidade</strong> por 12 meses — <strong>por cada indicação bem-sucedida</strong> (cliente fechado).</p>
-                    <ul>
-                        <li>O desconto é aplicado <strong>apenas sobre a mensalidade</strong> (não incide sobre a taxa de implantação).</li>
-                        <li>Pode ser acumulado até <strong>30% de desconto máximo</strong> (3 indicações válidas).</li>
-                        <li>Exemplo: com 3 indicações, mensalidade cai de R$ 8.982,00 para <strong>R$ 6.287,40/mês</strong> por 12 meses.</li>
-                    </ul>
-
-                    <h2>4. Projeção de Pagamentos Mensais</h2>
-                    <table>
-                        <tr><th>Período</th><th>Taxa de Implantação</th><th>Mensalidade</th><th>Total Mensal</th></tr>
-                        <tr><td>Meses 1 a 3 (carência)</td><td>R$ 2.952,60</td><td>R$ 0,00</td><td><strong>R$ 2.952,60</strong></td></tr>
-                        <tr><td>Meses 4 a 12</td><td>R$ 2.952,60</td><td>R$ 3.171,00</td><td><strong>R$ 6.123,60</strong></td></tr>
-                        <tr><td>Meses 13 a 48</td><td>R$ 2.952,60</td><td>R$ 8.982,00</td><td><strong>R$ 11.934,60</strong></td></tr>
-                    </table>
-
-                    <h2>5. Resumo do Investimento Total (48 meses)</h2>
-                    <table>
-                        <tr><th>Item</th><th>Valor Total</th></tr>
-                        <tr><td>Taxa de implantação (48x)</td><td>R$ 141.725,00</td></tr>
-                        <tr><td>Mensalidade – Fase 1 (12 meses)</td><td>R$ 38.052,00</td></tr>
-                        <tr><td>Mensalidade – Fase 2 (36 meses)</td><td>R$ 323.352,00</td></tr>
-                        <tr class="total"><td><strong>Total Geral</strong></td><td><strong>R$ 503.129,00</strong></td></tr>
-                    </table>
-                    <p class="note">* Valores sem considerar descontos por indicação. Com 30% de desconto por indicação, economia adicional pode chegar a ~R$ 96.000,00.</p>
-
-                    <div class="highlight-box">
-                        <p>💡 <strong>Por que escolher a Spdata?</strong><br>
-                        <strong>Previsibilidade financeira</strong>, <strong>zero reajuste indexado</strong>, <strong>apoio estratégico</strong> e <strong>recompensa por parceria</strong> — tudo pensado para o sucesso do Hospital Madalena Sofia.</p>
-                    </div>
-
-                    <div class="footer">
-                        <p>Spdata – Tecnologia em Gestão Hospitalar<br>
-                        Excelência, inovação e compromisso com resultados.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Layout 2 (Meu layout) -->
-        <div id="layout2" class="layout">
+        <div id="layout2">
             <div class="layout2">
                 <header>
                     <h1>PROPOSTA COMERCIAL</h1>
@@ -638,30 +460,12 @@
     </div>
 
     <script>
-        // Alternar entre layouts
-        document.getElementById('layout1-btn').addEventListener('click', function() {
-            document.getElementById('layout1').classList.add('active');
-            document.getElementById('layout2').classList.remove('active');
-            document.getElementById('layout1-btn').classList.add('active');
-            document.getElementById('layout2-btn').classList.remove('active');
-        });
-        
-        document.getElementById('layout2-btn').addEventListener('click', function() {
-            document.getElementById('layout1').classList.remove('active');
-            document.getElementById('layout2').classList.add('active');
-            document.getElementById('layout1-btn').classList.remove('active');
-            document.getElementById('layout2-btn').classList.add('active');
-        });
-        
         // Gerar PDF
         document.getElementById('pdf-btn').addEventListener('click', function() {
             const { jsPDF } = window.jspdf;
             
-            // Obter o layout ativo
-            const activeLayout = document.querySelector('.layout.active');
-            
             // Usar html2canvas para capturar o layout como imagem
-            html2canvas(activeLayout, {
+            html2canvas(document.getElementById('layout2'), {
                 scale: 2, // Maior qualidade
                 useCORS: true,
                 logging: false
