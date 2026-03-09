@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Curitiba · Implantação PACS · Valor zerado</title>
+    <title>Proposta · Hospital Madalena Sofia · Implantação PACS</title>
     <!-- Fontes e ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
             box-shadow: 0 30px 60px -15px rgba(0, 40, 60, 0.3);
             overflow: hidden;
         }
-        /* cabeçalho */
+        /* cabeçalho personalizado para o hospital */
         .top-bar {
             background: #0A2472;
             padding: 18px 40px;
@@ -50,16 +50,16 @@
             letter-spacing: 0.3px;
             font-size: 1.1rem;
         }
-        .top-bar .badge-curitiba {
+        .top-bar .badge-hospital {
             margin-left: auto;
             background: rgba(255,255,255,0.15);
-            padding: 8px 18px;
+            padding: 8px 22px;
             border-radius: 40px;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 1rem;
             border: 1px solid rgba(255,255,255,0.3);
         }
-        .badge-curitiba i {
+        .badge-hospital i {
             margin-right: 8px;
             font-size: 16px;
             color: #ffd966;
@@ -69,6 +69,36 @@
         .main-content {
             padding: 40px 40px 30px 40px;
         }
+        
+        /* mensagem de parceria em destaque */
+        .mensagem-parceria {
+            background: #f0f7ff;
+            border-radius: 28px;
+            padding: 28px 35px;
+            margin-bottom: 30px;
+            border-left: 8px solid #f4b740;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .mensagem-parceria p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #1e3a5f;
+            font-weight: 500;
+        }
+        .mensagem-parceria .destaque {
+            color: #c5283d;
+            font-weight: 700;
+            background: #ffe9e9;
+            padding: 2px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 10px 0 5px;
+        }
+        .mensagem-parceria i {
+            color: #f4b740;
+            margin-right: 8px;
+        }
+        
         .proposta-original {
             background: #f8fafd;
             border-radius: 28px;
@@ -121,7 +151,7 @@
             font-size: 1.6rem;
         }
 
-        /* SEÇÃO DO CRONÔMETRO RÁPIDO (R$ 9.480 → R$ 0 em poucos segundos) */
+        /* SEÇÃO DO CRONÔMETRO RÁPIDO */
         .cronometro-valor-section {
             background: linear-gradient(135deg, #f8f2de 0%, #fff1d6 100%);
             border-radius: 40px;
@@ -328,14 +358,24 @@
     <div class="container">
         <div class="top-bar">
             <i class="fas fa-hand-holding-heart"></i>
-            <span>Radiologia Curitiba • Proposta revisada</span>
-            <div class="badge-curitiba">
-                <i class="fas fa-location-dot"></i> Cliente Curitiba/PR
+            <span>Proposta Comercial</span>
+            <div class="badge-hospital">
+                <i class="fas fa-location-dot"></i> Hospital Madalena Sofia · Curitiba/PR
             </div>
         </div>
 
         <div class="main-content">
-            <!-- resumo da proposta -->
+            <!-- MENSAGEM DE PARCERIA (com suas palavras) -->
+            <div class="mensagem-parceria">
+                <p>
+                    <i class="fas fa-quote-left"></i> Para o <strong>Hospital Madalena Sofia</strong>, este desconto na taxa de implantação é mais do que uma cortesia: é o nosso <strong>investimento no início de uma parceria</strong>. 
+                    Acreditamos no crescimento da instituição e queremos muito tê-los como nossos parceiros, apoiando ativamente esta nova fase. 
+                    <span class="destaque">Todas as atividades de implantação serão realizadas integralmente</span>, com todo o cuidado e excelência que o hospital merece. 
+                    <i class="fas fa-quote-right"></i>
+                </p>
+            </div>
+
+            <!-- resumo da proposta original -->
             <div class="proposta-original">
                 <div class="valores">
                     <div class="item-valor">
@@ -354,7 +394,7 @@
                 </div>
             </div>
 
-            <!-- CRONÔMETRO RÁPIDO: valor despenca de R$ 9.480 até R$ 0 -->
+            <!-- CRONÔMETRO RÁPIDO: R$ 9.480 → R$ 0 -->
             <div class="cronometro-valor-section">
                 <div class="info-desconto">
                     <div class="tag-desconto"><i class="fas fa-bolt" style="margin-right:10px;"></i> 100% DE DESCONTO</div>
@@ -362,12 +402,12 @@
                         Taxa de implantação <span>absorvida</span>
                     </div>
                     <div style="margin-top:12px; display:flex; gap:5px; font-size:1.1rem; color:#3d587b;">
-                        <i class="fas fa-clock"></i> em poucos segundos...
+                        <i class="fas fa-clock"></i> investimento nosso sendo aplicado...
                     </div>
                 </div>
                 <div class="timer-valor-box">
                     <div class="valor-andaime">
-                        <div class="label-menor">VALOR DESPENCANDO</div>
+                        <div class="label-menor">VALOR SENDO ZERADO</div>
                         <div id="valorDinamico">R$ 9.480</div>
                     </div>
                     <div class="fixo-zero">
@@ -376,7 +416,7 @@
                 </div>
             </div>
 
-            <!-- ATIVIDADES -->
+            <!-- ATIVIDADES DE IMPLANTAÇÃO (mostrando o trabalho incluso) -->
             <div class="atividades-titulo">
                 <i class="fas fa-clipboard-list"></i>
                 <h2>Etapas da implantação · escopo PACS (nosso investimento)</h2>
@@ -403,7 +443,7 @@
             <!-- DESTAQUE 100% absorvido -->
             <div class="inv-badge-final">
                 <div class="esq">
-                    <i class="fas fa-gem"></i> Investimento em implantação
+                    <i class="fas fa-gem"></i> Nosso investimento em implantação
                 </div>
                 <div class="dir">
                     <i class="fas fa-percent"></i> 100% absorvido
@@ -413,18 +453,18 @@
         </div> <!-- main-content -->
 
         <div class="footer-obs">
-            <span><i class="fas fa-handshake"></i> Taxa de implantação R$ 9.480,00 integralmente convertida em cortesia.</span>
-            <span><i class="fas fa-x-ray"></i> Módulo PACS incluso na mensalidade.</span>
+            <span><i class="fas fa-handshake"></i> Taxa de implantação R$ 9.480,00 integralmente convertida em cortesia · Hospital Madalena Sofia</span>
+            <span><i class="fas fa-x-ray"></i> Módulo PACS incluso na mensalidade</span>
         </div>
     </div>
 
-    <!-- SCRIPT: CRONÔMETRO RÁPIDO - valor despenca de 9480 até 0 em ~2.5 segundos -->
+    <!-- SCRIPT: CRONÔMETRO RÁPIDO -->
     <script>
         (function() {
             const valorDisplay = document.getElementById('valorDinamico');
             const valorInicial = 9480;
-            const duracaoSegundos = 2.5; // tempo total em segundos
-            const framesPorSegundo = 60; // 60fps para animação suave
+            const duracaoSegundos = 2.5;
+            const framesPorSegundo = 60;
             const totalFrames = Math.floor(duracaoSegundos * framesPorSegundo);
             const decrementoPorFrame = valorInicial / totalFrames;
             let frameAtual = 0;
@@ -441,7 +481,6 @@
                     valorDisplay.innerText = formatarMoeda(valorAtual);
                     requestAnimationFrame(animarValor);
                 } else {
-                    // garante que termine exatamente em zero
                     valorDisplay.innerText = 'R$ 0';
                     valorDisplay.style.backgroundColor = '#1e6f3f';
                     valorDisplay.style.borderColor = '#f4b740';
@@ -449,10 +488,9 @@
                 }
             }
             
-            // inicia a animação imediatamente
             setTimeout(() => {
                 animarValor();
-            }, 200); // pequeno atraso para o usuário perceber o início
+            }, 300);
         })();
     </script>
 </body>
