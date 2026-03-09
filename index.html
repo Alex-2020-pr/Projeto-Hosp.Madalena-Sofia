@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Curitiba · Implantação PACS · Valor zerado</title>
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eef2f6;
+            font-family: 'Inter', sans-serif;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 40px 40px 32px 32px;
+            box-shadow: 0 30px 60px -15px rgba(0, 40, 60, 0.3);
+            overflow: hidden;
+        }
+        /* cabeçalho */
+        .top-bar {
+            background: #0A2472;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+        .top-bar i {
+            font-size: 28px;
+            color: #ffd966;
+        }
+        .top-bar span {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            font-size: 1.1rem;
+        }
+        .top-bar .badge-curitiba {
+            margin-left: auto;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .badge-curitiba i {
+            margin-right: 8px;
+            font-size: 16px;
+            color: #ffd966;
+        }
+
+        /* conteúdo principal */
+        .main-content {
+            padding: 40px 40px 30px 40px;
+        }
+        .proposta-original {
+            background: #f8fafd;
+            border-radius: 28px;
+            padding: 24px 30px;
+            margin-bottom: 32px;
+            border: 1px solid #dde3eb;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .valores {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .item-valor {
+            display: flex;
+            flex-direction: column;
+        }
+        .item-valor .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #476788;
+            font-weight: 600;
+        }
+        .item-valor .valor {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0b2b40;
+            line-height: 1.2;
+        }
+        .item-valor .detalhe {
+            font-size: 0.85rem;
+            color: #557a9a;
+        }
+        .modulo-pacs {
+            background: #e3f0fc;
+            padding: 12px 25px;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #0A2472;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        .modulo-pacs i {
+            font-size: 1.6rem;
+        }
+
+        /* SEÇÃO DO CRONÔMETRO RÁPIDO (R$ 9.480 → R$ 0 em poucos segundos) */
+        .cronometro-valor-section {
+            background: linear-gradient(135deg, #f8f2de 0%, #fff1d6 100%);
+            border-radius: 40px;
+            padding: 30px 35px;
+            margin: 30px 0 30px 0;
+            border: 2px solid #f2c94c;
+            box-shadow: 0 15px 25px -10px rgba(210, 150, 0, 0.25);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .info-desconto {
+            display: flex;
+            flex-direction: column;
+        }
+        .info-desconto .tag-desconto {
+            background: #c5283d;
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+            padding: 8px 24px;
+            border-radius: 60px;
+            display: inline-block;
+            width: fit-content;
+            letter-spacing: 1.5px;
+            box-shadow: 0 6px 0 #7a0f1f;
+            margin-bottom: 15px;
+        }
+        .info-desconto .chamada {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d374b;
+            line-height: 1.2;
+        }
+        .info-desconto .chamada span {
+            color: #1e6f3f;
+            background: #e0ffd9;
+            padding: 4px 15px;
+            border-radius: 40px;
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+        .timer-valor-box {
+            background: white;
+            border-radius: 70px;
+            padding: 15px 35px 15px 40px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            border: 2px solid #f0b429;
+        }
+        .valor-andaime {
+            text-align: center;
+        }
+        .label-menor {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5f6f82;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #valorDinamico {
+            font-size: 4.2rem;
+            font-weight: 800;
+            font-family: 'Inter', monospace;
+            background: #0f2b40;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            line-height: 1;
+            border: 3px solid #f4b740;
+            transition: background 0.3s;
+            min-width: 280px;
+            text-align: center;
+        }
+        .fixo-zero {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e6f3f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #e2f7e2;
+            padding: 10px 25px;
+            border-radius: 60px;
+        }
+        .fixo-zero i {
+            font-size: 2.5rem;
+            color: #008000;
+        }
+
+        /* lista de atividades */
+        .atividades-titulo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 40px 0 25px 0;
+        }
+        .atividades-titulo h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #0b2b40;
+        }
+        .atividades-titulo i {
+            font-size: 2.2rem;
+            color: #f4b740;
+        }
+        .grid-atividades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+        .atividade-item {
+            background: #f9fcff;
+            border-radius: 24px;
+            padding: 20px 20px 20px 25px;
+            border: 1px solid #cbd6e4;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .atividade-item:hover {
+            border-color: #f4b740;
+            background: #fffcf0;
+        }
+        .icone-ativ {
+            background: #0A2472;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .texto-ativ p {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+        }
+        .texto-ativ .desc-breve {
+            font-size: 0.9rem;
+            color: #446688;
+            line-height: 1.4;
+        }
+
+        /* selo final */
+        .inv-badge-final {
+            background: #e2f0e2;
+            border-radius: 28px;
+            padding: 22px 35px;
+            margin: 40px 0 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 12px solid #1e6f3f;
+        }
+        .inv-badge-final .esq {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1a472a;
+        }
+        .inv-badge-final .dir {
+            background: white;
+            padding: 15px 35px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: #1e6f3f;
+            box-shadow: 0 4px 0 #0a2b1a;
+        }
+
+        .footer-obs {
+            padding: 25px 40px 20px 40px;
+            background: #f2f6fa;
+            color: #42658b;
+            font-size: 0.95rem;
+            border-top: 1px dashed #b4c8da;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-obs i {
+            color: #f4b740;
+        }
+        @media (max-width: 750px) {
+            .main-content { padding: 25px; }
+            .timer-valor-box { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>Radiologia Curitiba • Proposta revisada</span>
+            <div class="badge-curitiba">
+                <i class="fas fa-location-dot"></i> Cliente Curitiba/PR
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- resumo da proposta -->
+            <div class="proposta-original">
+                <div class="valores">
+                    <div class="item-valor">
+                        <span class="label"><i class="far fa-calendar-alt"></i> Mensalidade (nuvem)</span>
+                        <span class="valor">R$ 1.800,00</span>
+                        <span class="detalhe">Locação + suporte PACS</span>
+                    </div>
+                    <div class="item-valor">
+                        <span class="label"><i class="fas fa-tools"></i>Implantação SGH / PACS</span>
+                        <span class="valor">R$ 9.480,00</span>
+                        <span class="detalhe">parcelamento em 6x (original)</span>
+                    </div>
+                </div>
+                <div class="modulo-pacs">
+                    <i class="fas fa-x-ray"></i> Módulo PACS (RX e Doppler)
+                </div>
+            </div>
+
+            <!-- CRONÔMETRO RÁPIDO: valor despenca de R$ 9.480 até R$ 0 -->
+            <div class="cronometro-valor-section">
+                <div class="info-desconto">
+                    <div class="tag-desconto"><i class="fas fa-bolt" style="margin-right:10px;"></i> 100% DE DESCONTO</div>
+                    <div class="chamada">
+                        Taxa de implantação <span>absorvida</span>
+                    </div>
+                    <div style="margin-top:12px; display:flex; gap:5px; font-size:1.1rem; color:#3d587b;">
+                        <i class="fas fa-clock"></i> em poucos segundos...
+                    </div>
+                </div>
+                <div class="timer-valor-box">
+                    <div class="valor-andaime">
+                        <div class="label-menor">VALOR DESPENCANDO</div>
+                        <div id="valorDinamico">R$ 9.480</div>
+                    </div>
+                    <div class="fixo-zero">
+                        <i class="fas fa-check-circle"></i> R$ 0
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATIVIDADES -->
+            <div class="atividades-titulo">
+                <i class="fas fa-clipboard-list"></i>
+                <h2>Etapas da implantação · escopo PACS (nosso investimento)</h2>
+            </div>
+            <div class="grid-atividades">
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-server"></i></div><div class="texto-ativ"><p>Infraestrutura e servidor em nuvem</p><div class="desc-breve">Configuração de storage DICOM, redundância e backup</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-network-wired"></i></div><div class="texto-ativ"><p>Otimização de rede head-end</p><div class="desc-breve">Switches, cabeamento e priorização de tráfego de imagens</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-tv"></i></div><div class="texto-ativ"><p>Workstations e monitores de laudo</p><div class="desc-breve">Calibração DICOM, instalação de estações de diagnóstico</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-x-ray"></i></div><div class="texto-ativ"><p>Integração de modalidades (RX / Doppler)</p><div class="desc-breve">Configuração DICOM: IP, portas, AE Title, envio automático</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-list"></i></div><div class="texto-ativ"><p>MWL / Worklist com RIS</p><div class="desc-breve">Integração para baixar exames agendados, evitar redigitação</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-file-signature"></i></div><div class="texto-ativ"><p>Templates de laudo personalizados</p><div class="desc-breve">Criação de modelos para RX e Doppler (padronização)</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-lock"></i></div><div class="texto-ativ"><p>Perfis de acesso e segurança</p><div class="desc-breve">Permissões para radiologistas, solicitantes, enfermaria</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-route"></i></div><div class="texto-ativ"><p>Regras de distribuição (auto-routing)</p><div class="desc-breve">Exames direcionados automaticamente às estações corretas</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-chalkboard-user"></i></div><div class="texto-ativ"><p>Treinamento técnicos em radiologia</p><div class="desc-breve">Envio de imagens, worklist, checagem de qualidade</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-user-md"></i></div><div class="texto-ativ"><p>Capacitação médicos radiologistas</p><div class="desc-breve">Ferramentas de laudo, medições, comparativos</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-stethoscope"></i></div><div class="texto-ativ"><p>Treinamento corpo clínico (solicitantes)</p><div class="desc-breve">Visualizador web, acesso a exames de pacientes internados</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-laptop-medical"></i></div><div class="texto-ativ"><p>Suporte e treinamento equipe de TI</p><div class="desc-breve">Gestão de usuários, backups, monitoramento</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-vial"></i></div><div class="texto-ativ"><p>Testes de carga e aceitação (UAT)</p><div class="desc-breve">Simulação de alta demanda, validação com usuários reais</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-upload"></i></div><div class="texto-ativ"><p>Carga inicial de exames antigos</p><div class="desc-breve">Importação de histórico (conforme disponibilidade)</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-people-arrows"></i></div><div class="texto-ativ"><p>Suporte presencial go-live</p><div class="desc-breve">Equipe in loco nos primeiros dias para acompanhamento</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-file-contract"></i></div><div class="texto-ativ"><p>Plano de contingência e backup</p><div class="desc-breve">Procedimento em caso de indisponibilidade, retomada segura</div></div></div>
+            </div>
+
+            <!-- DESTAQUE 100% absorvido -->
+            <div class="inv-badge-final">
+                <div class="esq">
+                    <i class="fas fa-gem"></i> Investimento em implantação
+                </div>
+                <div class="dir">
+                    <i class="fas fa-percent"></i> 100% absorvido
+                </div>
+            </div>
+
+        </div> <!-- main-content -->
+
+        <div class="footer-obs">
+            <span><i class="fas fa-handshake"></i> Taxa de implantação R$ 9.480,00 integralmente convertida em cortesia.</span>
+            <span><i class="fas fa-x-ray"></i> Módulo PACS incluso na mensalidade.</span>
+        </div>
+    </div>
+
+    <!-- SCRIPT: CRONÔMETRO RÁPIDO - valor despenca de 9480 até 0 em ~2.5 segundos -->
+    <script>
+        (function() {
+            const valorDisplay = document.getElementById('valorDinamico');
+            const valorInicial = 9480;
+            const duracaoSegundos = 2.5; // tempo total em segundos
+            const framesPorSegundo = 60; // 60fps para animação suave
+            const totalFrames = Math.floor(duracaoSegundos * framesPorSegundo);
+            const decrementoPorFrame = valorInicial / totalFrames;
+            let frameAtual = 0;
+            
+            function formatarMoeda(valor) {
+                return 'R$ ' + Math.floor(valor).toLocaleString('pt-BR');
+            }
+
+            function animarValor() {
+                if (frameAtual < totalFrames) {
+                    frameAtual++;
+                    let valorAtual = valorInicial - (decrementoPorFrame * frameAtual);
+                    if (valorAtual < 0) valorAtual = 0;
+                    valorDisplay.innerText = formatarMoeda(valorAtual);
+                    requestAnimationFrame(animarValor);
+                } else {
+                    // garante que termine exatamente em zero
+                    valorDisplay.innerText = 'R$ 0';
+                    valorDisplay.style.backgroundColor = '#1e6f3f';
+                    valorDisplay.style.borderColor = '#f4b740';
+                    valorDisplay.style.transition = 'all 0.5s';
+                }
+            }
+            
+            // inicia a animação imediatamente
+            setTimeout(() => {
+                animarValor();
+            }, 200); // pequeno atraso para o usuário perceber o início
+        })();
+    </script>
+</body>
+</html>
