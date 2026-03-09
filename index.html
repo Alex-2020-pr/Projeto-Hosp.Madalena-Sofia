@@ -32,7 +32,6 @@
             box-shadow: 0 30px 60px -15px rgba(0, 40, 60, 0.3);
             overflow: hidden;
         }
-        /* cabeçalho personalizado para o hospital */
         .top-bar {
             background: #0A2472;
             padding: 18px 40px;
@@ -65,12 +64,10 @@
             color: #ffd966;
         }
 
-        /* conteúdo principal */
         .main-content {
             padding: 40px 40px 30px 40px;
         }
         
-        /* mensagem de parceria em destaque */
         .mensagem-parceria {
             background: #f0f7ff;
             border-radius: 28px;
@@ -151,7 +148,6 @@
             font-size: 1.6rem;
         }
 
-        /* SEÇÃO DO CRONÔMETRO RÁPIDO */
         .cronometro-valor-section {
             background: linear-gradient(135deg, #f8f2de 0%, #fff1d6 100%);
             border-radius: 40px;
@@ -246,7 +242,6 @@
             color: #008000;
         }
 
-        /* lista de atividades */
         .atividades-titulo {
             display: flex;
             align-items: center;
@@ -306,7 +301,6 @@
             line-height: 1.4;
         }
 
-        /* selo final */
         .inv-badge-final {
             background: #e2f0e2;
             border-radius: 28px;
@@ -365,7 +359,6 @@
         </div>
 
         <div class="main-content">
-            <!-- MENSAGEM DE PARCERIA (com suas palavras) -->
             <div class="mensagem-parceria">
                 <p>
                     <i class="fas fa-quote-left"></i> Para o <strong>Hospital Madalena Sofia</strong>, este desconto na taxa de implantação é mais do que uma cortesia: é o nosso <strong>investimento no início de uma parceria</strong>. 
@@ -375,7 +368,6 @@
                 </p>
             </div>
 
-            <!-- resumo da proposta original -->
             <div class="proposta-original">
                 <div class="valores">
                     <div class="item-valor">
@@ -394,7 +386,6 @@
                 </div>
             </div>
 
-            <!-- CRONÔMETRO RÁPIDO: R$ 9.480 → R$ 0 -->
             <div class="cronometro-valor-section">
                 <div class="info-desconto">
                     <div class="tag-desconto"><i class="fas fa-bolt" style="margin-right:10px;"></i> 100% DE DESCONTO</div>
@@ -416,15 +407,12 @@
                 </div>
             </div>
 
-            <!-- ATIVIDADES DE IMPLANTAÇÃO (mostrando o trabalho incluso) -->
             <div class="atividades-titulo">
                 <i class="fas fa-clipboard-list"></i>
                 <h2>Etapas da implantação · escopo PACS (nosso investimento)</h2>
             </div>
             <div class="grid-atividades">
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-server"></i></div><div class="texto-ativ"><p>Infraestrutura e servidor em nuvem</p><div class="desc-breve">Configuração de storage DICOM, redundância e backup</div></div></div>
-                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-network-wired"></i></div><div class="texto-ativ"><p>Otimização de rede head-end</p><div class="desc-breve">Switches, cabeamento e priorização de tráfego de imagens</div></div></div>
-                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-tv"></i></div><div class="texto-ativ"><p>Workstations e monitores de laudo</p><div class="desc-breve">Calibração DICOM, instalação de estações de diagnóstico</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-x-ray"></i></div><div class="texto-ativ"><p>Integração de modalidades (RX / Doppler)</p><div class="desc-breve">Configuração DICOM: IP, portas, AE Title, envio automático</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-list"></i></div><div class="texto-ativ"><p>MWL / Worklist com RIS</p><div class="desc-breve">Integração para baixar exames agendados, evitar redigitação</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-file-signature"></i></div><div class="texto-ativ"><p>Templates de laudo personalizados</p><div class="desc-breve">Criação de modelos para RX e Doppler (padronização)</div></div></div>
@@ -432,15 +420,14 @@
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-route"></i></div><div class="texto-ativ"><p>Regras de distribuição (auto-routing)</p><div class="desc-breve">Exames direcionados automaticamente às estações corretas</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-chalkboard-user"></i></div><div class="texto-ativ"><p>Treinamento técnicos em radiologia</p><div class="desc-breve">Envio de imagens, worklist, checagem de qualidade</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-user-md"></i></div><div class="texto-ativ"><p>Capacitação médicos radiologistas</p><div class="desc-breve">Ferramentas de laudo, medições, comparativos</div></div></div>
-                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-stethoscope"></i></div><div class="texto-ativ"><p>Treinamento corpo clínico (solicitantes)</p><div class="desc-breve">Visualizador web, acesso a exames de pacientes internados</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-chalkboard-teacher"></i></div><div class="texto-ativ"><p>Treinamento de multiplicadores</p><div class="desc-breve">Capacitamos multiplicadores que repassarão o conhecimento aos solicitantes</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-laptop-medical"></i></div><div class="texto-ativ"><p>Suporte e treinamento equipe de TI</p><div class="desc-breve">Gestão de usuários, backups, monitoramento</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-vial"></i></div><div class="texto-ativ"><p>Testes de carga e aceitação (UAT)</p><div class="desc-breve">Simulação de alta demanda, validação com usuários reais</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-upload"></i></div><div class="texto-ativ"><p>Carga inicial de exames antigos</p><div class="desc-breve">Importação de histórico (conforme disponibilidade)</div></div></div>
-                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-people-arrows"></i></div><div class="texto-ativ"><p>Suporte presencial go-live</p><div class="desc-breve">Equipe in loco nos primeiros dias para acompanhamento</div></div></div>
+                <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-headset"></i></div><div class="texto-ativ"><p>Suporte remoto go-live</p><div class="desc-breve">Equipe dedicada online nos primeiros dias para acompanhamento</div></div></div>
                 <div class="atividade-item"><div class="icone-ativ"><i class="fas fa-file-contract"></i></div><div class="texto-ativ"><p>Plano de contingência e backup</p><div class="desc-breve">Procedimento em caso de indisponibilidade, retomada segura</div></div></div>
             </div>
 
-            <!-- DESTAQUE 100% absorvido -->
             <div class="inv-badge-final">
                 <div class="esq">
                     <i class="fas fa-gem"></i> Nosso investimento em implantação
@@ -450,7 +437,7 @@
                 </div>
             </div>
 
-        </div> <!-- main-content -->
+        </div>
 
         <div class="footer-obs">
             <span><i class="fas fa-handshake"></i> Taxa de implantação R$ 9.480,00 integralmente convertida em cortesia · Hospital Madalena Sofia</span>
@@ -458,7 +445,6 @@
         </div>
     </div>
 
-    <!-- SCRIPT: CRONÔMETRO RÁPIDO -->
     <script>
         (function() {
             const valorDisplay = document.getElementById('valorDinamico');
